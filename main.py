@@ -46,7 +46,7 @@ async def check_otp(user_id, channel, token):
                 otp = re.search(r"\d{4,6}", text)
 
                 if otp:
-                    await channel.send(f"🔥 OTP của <@{user_id}>: `{otp.group()}`")
+                    await channel.send(f" OTP của <@{user_id}>: `{otp.group()}`")
                     return
 
             await asyncio.sleep(2)
@@ -56,7 +56,7 @@ async def check_otp(user_id, channel, token):
 
 @client.event
 async def on_ready():
-    print(f"✅ Bot online: {client.user}")
+    print(f"Bot online: {client.user}")
 
 @client.event
 async def on_message(message):
