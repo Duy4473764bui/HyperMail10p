@@ -57,7 +57,7 @@ async def check_otp(user_id, channel, token):
                 otp = re.search(r"\d{4,6}", text)
 
                 if otp:
-                    await channel.send(f"🔥 OTP mới của <@{user_id}>: `{otp.group()}`")
+                    await channel.send(f" OTP <@{user_id}>: `{otp.group()}`")
                     sent_ids.add(msg_id)
 
             await asyncio.sleep(2)
@@ -81,7 +81,7 @@ async def on_message(message):
         user_data[message.author.id] = token
 
         await message.channel.send(
-            f"📩 Mail của m: `{email}`\n⏳ Đang chờ OTP..."
+            f" Mail: `{email}`\n⏳ Đang chờ OTP..."
         )
 
         asyncio.create_task(
